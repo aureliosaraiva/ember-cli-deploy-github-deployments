@@ -10,6 +10,7 @@
   "author": "Aurelio Saraiva",
   "license": "MIT",
   "keywords": [
+    "ember-addon",
     "ember-cli-deploy-plugin"
   ],
   "dependencies": {
