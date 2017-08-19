@@ -10,11 +10,71 @@ module.exports = {
       name: options.name,
       requiredConfig: ['publicURL', 'token', 'userOrOrganization', 'repo', 'commitSha'],
 
-      didDeploy(context) {
-        return this.notifyPullRequestOfDeploy(context);
+      willDeploy(context) {
+        return this.notifyPullRequestOfDeployPending(context);
       },
 
-      notifyPullRequestOfDeploy(context) {
+      didDeploy(context) {
+        return this.notifyPullRequestOfDeploySuccess(context);
+      },
+
+      didFail(context) {
+        return this.notifyPullRequestOfDeployError(context);
+      },
+
+      notifyPullRequestOfDeployError(context) {
+        let github = new GitHubApi();
+
+        github.authenticate({
+          type: 'oauth',
+          token: this.readConfig('token'),
+        });
+
+        return new Promise((resolve, reject) => {
+          github.repos.createStatus({
+            owner: this.readConfig('userOrOrganization'),
+            repo: this.readConfig('repo'),
+            sha: this.readConfig('commitSha'),
+            state: 'error',
+            description: 'Build failed!',
+            context: 'ember-cli-deploy',
+          }, (error, result) => {
+            if (error) {
+              reject(error);
+            } else {
+              resolve(result);
+            }
+          });
+        });
+      },
+
+      notifyPullRequestOfDeployPending(context) {
+        let github = new GitHubApi();
+
+        github.authenticate({
+          type: 'oauth',
+          token: this.readConfig('token'),
+        });
+
+        return new Promise((resolve, reject) => {
+          github.repos.createStatus({
+            owner: this.readConfig('userOrOrganization'),
+            repo: this.readConfig('repo'),
+            sha: this.readConfig('commitSha'),
+            state: 'pending',
+            description: 'Building application!',
+            context: 'ember-cli-deploy',
+          }, (error, result) => {
+            if (error) {
+              reject(error);
+            } else {
+              resolve(result);
+            }
+          });
+        });
+      },
+
+      notifyPullRequestOfDeploySuccess(context) {
         let github = new GitHubApi();
 
         github.authenticate({
@@ -28,6 +88,7 @@ module.exports = {
             repo: this.readConfig('repo'),
             sha: this.readConfig('commitSha'),
             state: 'success',
+            description: 'Complete build!',
             target_url: this.readConfig('publicURL'),
             context: 'ember-cli-deploy',
           }, (error, result) => {
