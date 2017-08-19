@@ -1,0 +1,23 @@
+{
+  "name": "ember-cli-deploy-github-deployments",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {},
+  "repository": "https://github.com/aureliosaraiva/ember-cli-deploy-github-deployments",
+  "engines": {
+    "node": ">= 4.x.x"
+  },
+  "author": "Aurelio Saraiva",
+  "license": "MIT",
+  "keywords": [
+    "ember-cli-deploy-plugin"
+  ],
+  "dependencies": {
+    "ember-cli-deploy-plugin": "^0.2.9",
+    "github": "^9.2.0",
+    "urlencode": "^1.1.0"
+  },
+  "ember-addon": {
+    "configPath": "tests/dummy/config"
+  }
+}
