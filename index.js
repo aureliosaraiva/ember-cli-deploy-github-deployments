@@ -8,7 +8,7 @@ module.exports = {
   createDeployPlugin(options) {
     var DeployPlugin = DeployPluginBase.extend({
       name: options.name,
-      requiredConfig: ['publicURL', 'token', 'userOrOrganization', 'repo', 'commitSha'],
+      requiredConfig: ['publicURL', 'token', 'username', 'reporname', 'commit'],
 
       willDeploy(context) {
         return this.notifyPullRequestOfDeployPending(context);
@@ -32,9 +32,9 @@ module.exports = {
 
         return new Promise((resolve, reject) => {
           github.repos.createStatus({
-            owner: this.readConfig('userOrOrganization'),
-            repo: this.readConfig('repo'),
-            sha: this.readConfig('commitSha'),
+            owner: this.readConfig('username'),
+            repo: this.readConfig('reporname'),
+            sha: this.readConfig('commit'),
             state: 'error',
             description: 'Build failed!',
             context: 'ember-cli-deploy',
@@ -58,9 +58,9 @@ module.exports = {
 
         return new Promise((resolve, reject) => {
           github.repos.createStatus({
-            owner: this.readConfig('userOrOrganization'),
-            repo: this.readConfig('repo'),
-            sha: this.readConfig('commitSha'),
+            owner: this.readConfig('username'),
+            repo: this.readConfig('reporname'),
+            sha: this.readConfig('commit'),
             state: 'pending',
             description: 'Building application!',
             context: 'ember-cli-deploy',
@@ -84,9 +84,9 @@ module.exports = {
 
         return new Promise((resolve, reject) => {
           github.repos.createStatus({
-            owner: this.readConfig('userOrOrganization'),
-            repo: this.readConfig('repo'),
-            sha: this.readConfig('commitSha'),
+            owner: this.readConfig('username'),
+            repo: this.readConfig('reporname'),
+            sha: this.readConfig('commit'),
             state: 'success',
             description: 'Complete build!',
             target_url: this.readConfig('publicURL'),
