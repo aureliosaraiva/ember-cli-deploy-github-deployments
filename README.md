@@ -1,6 +1,6 @@
 # ember-cli-deploy-github-deployments
 
-> An ember-cli-deploy-plugin for setting the status on a commit in a PR on [GitHub](https://github.com/).
+> An ember-cli-deploy-plugin for setting the status deploy on a commit in a PR on [GitHub](https://github.com/).
 
 [![](https://ember-cli-deploy.github.io/ember-cli-deploy-version-badges/plugins/ember-cli-deploy-s3.svg)](http://ember-cli-deploy.github.io/ember-cli-deploy-version-badges/)
 [![npm version](https://badge.fury.io/js/ember-cli-deploy-github-deployments.svg)](https://badge.fury.io/js/ember-cli-deploy-github-deployments)
