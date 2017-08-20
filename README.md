@@ -69,6 +69,8 @@ The user or organization that owns the reporname. e.x https://github.com/my-user
 
 The url which your assets are going to be viewed from. e.x. https://my-app-domain.com/{{commit}}
 
+## Screenshot (Pipeline)
+
 ### Pending deploy
 `ember-cli-deploy-github-deployments` will set the status `pending` of the github commit on the willDeploy.
 
