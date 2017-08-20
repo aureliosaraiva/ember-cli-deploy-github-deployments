@@ -70,15 +70,15 @@ The user or organization that owns the reporname. e.x https://github.com/my-user
 The url which your assets are going to be viewed from. e.x. https://my-app-domain.com/{{commit}}
 
 ### Pending deploy
-
+`ember-cli-deploy-github-deployments` will set the status `pending` of the github commit on the willDeploy.
 ![screenshot from 2017-08-20 14-08-42](https://user-images.githubusercontent.com/118861/29496839-452f279e-85b1-11e7-9ea0-0c9d608f3043.png)
 
 ### Success Deploy
-
+`ember-cli-deploy-github-deployments` will set the status `success` of the github commit on the didDeploy.
 ![screenshot from 2017-08-20 14-07-10](https://user-images.githubusercontent.com/118861/29496840-452fb4e8-85b1-11e7-9706-4e2f0f8d2863.png)
 
 ### Error Deploy
-
+`ember-cli-deploy-github-deployments` will set the status `error` of the github commit on the didFail.
 ![screenshot from 2017-08-20 14-09-04](https://user-images.githubusercontent.com/118861/29496838-452ec646-85b1-11e7-9319-3769c06155a9.png)
 
 
