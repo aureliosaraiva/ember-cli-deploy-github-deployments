@@ -85,8 +85,9 @@ The url which your assets are going to be viewed from. e.x. https://my-app-domai
 ![screenshot from 2017-08-20 14-09-04](https://user-images.githubusercontent.com/118861/29496838-452ec646-85b1-11e7-9319-3769c06155a9.png)
 
 ## Roadmap
-- [ ] Save log of deploy in Gist, when failure deploy
-- [ ] [add Github status deployments in timeline][3]
+- [ ] [Save log of deploy in Gist, when failure deploy][4]
+- [ ] [Add Github status deployments in timeline][3]
 
 [2]: http://ember-cli.github.io/ember-cli-deploy/plugins "Plugin Documentation"
 [3]: https://developer.github.com/v3/repos/deployments/
+[4]: https://developer.github.com/v3/gists/
