@@ -1,11 +1,11 @@
 {
   "name": "ember-cli-deploy-github-deployments",
   "version": "0.2.0",
-  "description": "",
+  "description": "An ember-cli-deploy-plugin for updating the deploy status on github.",
   "scripts": {},
   "repository": "https://github.com/aureliosaraiva/ember-cli-deploy-github-deployments",
   "engines": {
-    "node": ">= 4.x.x"
+    "node": ">= 4"
   },
   "author": "Aurelio Saraiva",
   "license": "MIT",
@@ -17,8 +17,5 @@
     "ember-cli-deploy-plugin": "^0.2.9",
     "github": "^9.2.0",
     "urlencode": "^1.1.0"
-  },
-  "ember-addon": {
-    "configPath": "tests/dummy/config"
   }
 }
