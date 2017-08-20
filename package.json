@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-deploy-github-deployments",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "An ember-cli-deploy-plugin for updating the deploy status on github.",
   "scripts": {},
   "repository": "https://github.com/aureliosaraiva/ember-cli-deploy-github-deployments",
