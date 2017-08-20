@@ -11,6 +11,7 @@ A plugin is an addon that can be executed as a part of the ember-cli-deploy pipe
 
 For more information on what plugins are and how they work, please refer to the [Plugin Documentation][2].
 
+
 ## Quick Start
 
 To get up and running quickly, do the following:
@@ -67,6 +68,19 @@ The user or organization that owns the reporname. e.x https://github.com/my-user
 ### publicURL
 
 The url which your assets are going to be viewed from. e.x. https://my-app-domain.com/{{commit}}
+
+### Pending deploy
+
+![screenshot from 2017-08-20 14-07-10](https://user-images.githubusercontent.com/118861/29496840-452fb4e8-85b1-11e7-9706-4e2f0f8d2863.png)
+
+### Success Deploy
+
+![screenshot from 2017-08-20 14-08-42](https://user-images.githubusercontent.com/118861/29496839-452f279e-85b1-11e7-9ea0-0c9d608f3043.png)
+
+### Error Deploy
+
+![screenshot from 2017-08-20 14-09-04](https://user-images.githubusercontent.com/118861/29496838-452ec646-85b1-11e7-9319-3769c06155a9.png)
+
 
 ## Optional Configuration Options
 
